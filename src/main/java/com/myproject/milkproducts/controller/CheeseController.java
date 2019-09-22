@@ -18,33 +18,34 @@ public class CheeseController {
     private CheeseService cheeseService;
 
     @PostMapping
-    public ResponseEntity<Void> create(@Validated({CheeseDto.Create.class})@RequestBody CheeseDto cheeseDto,
-                                       UriComponentsBuilder builder){
+    public ResponseEntity<Void> create(@Validated({CheeseDto.Create.class}) @RequestBody CheeseDto cheeseDto,
+                                       UriComponentsBuilder builder) {
         Long id = cheeseService.createCheese(cheeseDto);
         return ResponseEntity.created(builder.path("/cheese/{id}").buildAndExpand(id).toUri()).build();
     }
 
     @GetMapping
-    public List<CheeseDto> getAllMilk(){
+    public List<CheeseDto> getAllMilk() {
         return cheeseService.showAllCheese();
     }
 
     @PutMapping("{id}")
-    public void update(@PathVariable("id") Long id,@Validated({CheeseDto.Update.class})@RequestBody CheeseDto cheeseDto){
+    public void update(@PathVariable("id") Long id, @Validated({CheeseDto.Update.class}) @RequestBody CheeseDto cheeseDto) {
         cheeseService.cheeseUpdate(cheeseDto);
     }
 
     @GetMapping(params = "name")
-    public CheeseDto findProductByName(@RequestParam("name") String name){
+    public CheeseDto findProductByName(@RequestParam("name") String name) {
         return cheeseService.findCheeseByName(name);
     }
+
     @GetMapping("{id}")
-    public CheeseDto findProductById(@PathVariable("id") Long id){
+    public CheeseDto findProductById(@PathVariable("id") Long id) {
         return cheeseService.findCheeseById(id);
     }
 
     @DeleteMapping("{id}")
-    public void deleteProduct(@PathVariable("id")Long id){
+    public void deleteProduct(@PathVariable("id") Long id) {
         cheeseService.deleteCheeseById(id);
     }
 }

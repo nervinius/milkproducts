@@ -1,13 +1,12 @@
 package com.myproject.milkproducts.domain;
 
 
-
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "cheese")
-@PrimaryKeyJoinColumn(name = "cheese_id",referencedColumnName = "milkProduct_id")
+@PrimaryKeyJoinColumn(name = "cheese_id", referencedColumnName = "milkProduct_id")
 public class Cheese extends MilkProduct {
 
     @Enumerated(EnumType.STRING)

@@ -10,5 +10,6 @@ import java.util.Optional;
 public interface MilkProductRepository extends JpaRepository<MilkProduct, Long> {
 
     Optional<MilkProduct> findMilkProductByName(String name);
+
     boolean existsByName(String name);
 }

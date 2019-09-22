@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface CheeseRepository extends JpaRepository<Cheese,Long> {
+public interface CheeseRepository extends JpaRepository<Cheese, Long> {
 
-    Optional<Cheese>findCheeseByName(String name);
+    Optional<Cheese> findCheeseByName(String name);
+
     boolean existsByName(String name);
 }

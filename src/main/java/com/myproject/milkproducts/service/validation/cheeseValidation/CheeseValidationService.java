@@ -14,7 +14,7 @@ public class CheeseValidationService {
         this.validationRules = validationRules;
     }
 
-    public void validate(CheeseDto cheeseDto){
-        validationRules.forEach(s->s.validate(cheeseDto));
+    public void validate(CheeseDto cheeseDto) {
+        validationRules.forEach(s -> s.validate(cheeseDto));
     }
 }

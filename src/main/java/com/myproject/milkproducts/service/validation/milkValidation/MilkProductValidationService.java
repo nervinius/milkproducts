@@ -14,7 +14,7 @@ public class MilkProductValidationService {
         this.validationRules = validationRules;
     }
 
-    public void validate(MilkProductDto milkProductDto){
-        validationRules.forEach(s->s.validate(milkProductDto));
+    public void validate(MilkProductDto milkProductDto) {
+        validationRules.forEach(s -> s.validate(milkProductDto));
     }
 }

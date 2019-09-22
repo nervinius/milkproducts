@@ -30,7 +30,7 @@ public class CheeseService {
     }
 
     @Transactional
-    public Long createCheese(CheeseDto cheeseDto){
+    public Long createCheese(CheeseDto cheeseDto) {
         validationService.validate(cheeseDto);
         cheeseValidationService.validate(cheeseDto);
         Cheese cheese = cheeseConverter.convert(cheeseDto);
@@ -62,7 +62,7 @@ public class CheeseService {
                 .orElseThrow(() -> new NoSuchElementException("Cheese not found , id : " + id));
     }
 
-    public CheeseDto findCheeseByName(String name){
+    public CheeseDto findCheeseByName(String name) {
         return cheeseRepository.findCheeseByName(name)
                 .map(cheeseConverter::convert)
                 .orElseThrow(() -> new NoSuchElementException("Cheese not found , name : " + name));

@@ -18,33 +18,34 @@ public class MilkProductController {
     private MilkProductService milkProductService;
 
     @PostMapping
-    public ResponseEntity<Void> create(@Validated({MilkProductDto.Create.class})@RequestBody MilkProductDto milkProductDto,
-                                       UriComponentsBuilder builder){
+    public ResponseEntity<Void> create(@Validated({MilkProductDto.Create.class}) @RequestBody MilkProductDto milkProductDto,
+                                       UriComponentsBuilder builder) {
         Long id = milkProductService.createMilkProduct(milkProductDto);
         return ResponseEntity.created(builder.path("/milk/{id}").buildAndExpand(id).toUri()).build();
     }
 
     @PutMapping("{id}")
-    public void update(@PathVariable("id") Long id,@Validated({MilkProductDto.Update.class})@RequestBody MilkProductDto milkProductDto){
+    public void update(@PathVariable("id") Long id, @Validated({MilkProductDto.Update.class}) @RequestBody MilkProductDto milkProductDto) {
         milkProductService.milkProductUpdate(milkProductDto);
     }
 
     @GetMapping
-    public List<MilkProductDto> getAllMilkProducts(){
+    public List<MilkProductDto> getAllMilkProducts() {
         return milkProductService.showAllMilk();
     }
 
     @GetMapping(params = "name")
-    public MilkProductDto findProductByName(@RequestParam("name") String name){
+    public MilkProductDto findProductByName(@RequestParam("name") String name) {
         return milkProductService.findMilkProductByName(name);
     }
+
     @GetMapping("{id}")
-    public MilkProductDto findProductById(@PathVariable("id") Long id){
+    public MilkProductDto findProductById(@PathVariable("id") Long id) {
         return milkProductService.findMilkProductById(id);
     }
 
     @DeleteMapping("{id}")
-    public void deleteProduct(@PathVariable("id")Long id){
+    public void deleteProduct(@PathVariable("id") Long id) {
         milkProductService.deleteMilkProductById(id);
     }
 }

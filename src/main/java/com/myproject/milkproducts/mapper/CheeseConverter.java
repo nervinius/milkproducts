@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CheeseConverter {
 
-    public Cheese convert(CheeseDto cheeseDto){
+    public Cheese convert(CheeseDto cheeseDto) {
         Cheese cheese = new Cheese();
         cheese.setId(cheeseDto.getId());
         cheese.setName(cheeseDto.getName());
@@ -17,7 +17,7 @@ public class CheeseConverter {
         return cheese;
     }
 
-    public CheeseDto convert(Cheese cheese){
+    public CheeseDto convert(Cheese cheese) {
         CheeseDto cheeseDto = new CheeseDto();
         cheeseDto.setId(cheese.getId());
         cheeseDto.setName(cheese.getName());

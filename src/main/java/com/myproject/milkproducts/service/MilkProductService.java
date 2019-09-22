@@ -60,7 +60,7 @@ public class MilkProductService {
                 .orElseThrow(() -> new NoSuchElementException("MilkProduct not found , id : " + id));
     }
 
-    public MilkProductDto findMilkProductByName(String name){
+    public MilkProductDto findMilkProductByName(String name) {
         return milkProductRepository.findMilkProductByName(name)
                 .map(milkProductConverter::convert)
                 .orElseThrow(() -> new NoSuchElementException("MilkProduct not found , name : " + name));

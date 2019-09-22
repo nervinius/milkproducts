@@ -1,6 +1,6 @@
 package com.myproject.milkproducts.domain;
 
-public enum  CheeseType {
+public enum CheeseType {
 
     Mozzarella,
     Bree,
