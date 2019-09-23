@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface YogurtRepository extends JpaRepository<Yogurt,Long> {
 
     Optional<Yogurt> findYogurtByName(String name);
+    boolean existByName(String name);
 }

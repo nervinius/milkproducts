@@ -2,7 +2,9 @@ package com.myproject.milkproducts.service.validation.YogurtValidation;
 
 import com.myproject.milkproducts.dto.YogurtDto;
 import com.myproject.milkproducts.service.validation.ValidationException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class YogurtFlavorValidation implements YogurtValidationRule {
 
     @Override

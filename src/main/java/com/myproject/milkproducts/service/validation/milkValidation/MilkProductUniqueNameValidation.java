@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MilkUniqueNameProductValidation implements MilkProductValidationRule {
+public class MilkProductUniqueNameValidation implements MilkProductValidationRule {
 
 
     private MilkProductRepository milkProductRepository;
 
     @Autowired
-    public MilkUniqueNameProductValidation(MilkProductRepository milkProductRepository) {
+    public MilkProductUniqueNameValidation(MilkProductRepository milkProductRepository) {
         this.milkProductRepository = milkProductRepository;
     }
 
